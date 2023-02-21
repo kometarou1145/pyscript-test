@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+<script defer src="https://pyscript.net/latest/pyscript.js"></script>
+
+<head>
+<body>
+
+<py-script>
+import random
+import string
+
+tokenhead = ['MTA3','ODK','OTE']
+Color = '\033[36m','\033[35m','\033[34m','\033[33m','\033[32m','\033[31m'
+Bold = '\033[1m'
+Underline = '\033[4m'
+Reset = '\033[0m'
+
+cnt = 0
+while cnt < 100:
+ index1 = random.randint(0, len(tokenhead) - 1)
+ code1 = tokenhead[index1]
+ code2 = ''.join([random.choice(string.ascii_letters + string.digits) for i in range(2)])
+ code3 = ''.join([random.choice(string.ascii_letters + string.digits) for i in range(20)])
+ code4 = ''.join([random.choice(string.ascii_letters + string.digits) for i in range(6)])
+ code5 = ''.join([random.choice(string.ascii_letters + string.digits) for i in range(38)])
+ index2 = random.randint(0, len(Color) - 1)
+ ColorRandom = Color[index2]
+print(f"{code1}{code2}{code3}.{code4}.{code5}", file=tokens)
+print(Underline + Bold + ColorRandom + f"Generated : {code1}{code2}{code3}.{code4}.{code5}" + Reset)
+cnt += 1
+<py-script>
+<body>
+<html>
